@@ -2,13 +2,13 @@ import './index.css'
 import './background.css'
 
 import { useRef, useEffect, useState} from 'react'
-import gsap from 'gsap'; // for animations
+import gsap from 'gsap'; // for animations 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { FaPlay, FaFlag } from 'react-icons/fa';
 
 import Container from './Container'
-import Python from './containers-content/python'
+import Python from './containers-content/Python'
 import Timeline from './containers-content/Timeline';
 import Spans from './Spans'
 import Title from './Title'
