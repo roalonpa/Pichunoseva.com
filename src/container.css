@@ -1,0 +1,240 @@
+.container {
+  margin-bottom: 20px;
+  width: 92%;
+  padding: 50px 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(150deg, #00c8ff, #070bff);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0) 0px 0px 20px;
+  min-height: 350px;
+}
+
+h1, h2, p, span {
+  color: white;
+}
+
+.container-title {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  margin: 0 0 10px 0;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+}
+
+
+/* Python styling */
+
+.python-text, .python-text>span {
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-weight: lighter;
+}
+
+.python-div {
+  background-color: rgb(25, 25, 25);
+  border: 0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+}
+
+.python-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.python-icon {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  margin-right: 20px;
+}
+
+.python-task {
+  font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+/* Elige tu aventura styling */
+
+.message {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.choices {
+  margin-block: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.choice {
+  width: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+}
+
+.choice:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.result {
+  margin-block: 20px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+}
+
+/* Spotify playlist styling */
+
+.playlist-iframe {
+  width: 90%;
+  height: 415px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+}
+
+/* Carousel styling */
+
+
+/* Issue Tracker styling */
+
+.issues-containers-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.issue-tracker-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+  width: 45%;
+}
+
+.issue {
+  position: relative;
+  background-color: rgb(25, 25, 25);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.issue span {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.issue-title {
+  font-size: 24px;
+  color: white;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  margin: 10px 0 0 0;
+  line-height: 1.2;
+}
+
+.issue-description {
+  margin: 0 0 10px 0;
+}
+
+.issue-tracker-p {
+  font-size: 24px;
+  color: white;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-shadow:rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  margin: 0 0 10px 0;
+}
+
+.issue-progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.issue-id {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 88%;
+    margin-bottom: 15px;
+  }
+
+  /* Python styling */
+
+  .python-task {
+    font-size: 18px;
+    max-width: 500px;
+  }
+
+  /* Spotify playlist styling */
+
+  .playlist-iframe {
+    width: 100%;
+  }
+
+  /* Issue Tracker styling */
+  
+  .issue-tracker-container {
+    padding: 10px;
+  }
+
+  .issue span {
+    font-size: 16px;
+  }
+  .issue-title {
+    font-size: 22px;
+  }
+  .issue-description {
+    margin: 0 0 8px 0;
+  }
+  .issue-tracker-p {
+    font-size: 22px;
+    margin: 0 0 8px 0;
+  }
+}
