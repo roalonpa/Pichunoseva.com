@@ -1,6 +1,7 @@
 import './index.css'
 import './background.css'
 
+import { useWindowSize } from 'react-use'
 import { useRef, useEffect, useState} from 'react'
 import gsap from 'gsap'; // for animations 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -28,6 +29,7 @@ export default function App() {
   const containers = useRef()
   const [warning, setWarning] = useState(false);
   const [confettiState, setConfettiState] = useState(false);
+  const { width } = useWindowSize();
 
 
   const containersData = [
@@ -108,7 +110,7 @@ export default function App() {
     const containerElement = Array.from(containers.current.children).find(c => c.dataset.id === String(id));
     if (containerElement) {
       const elementTop = containerElement.offsetTop;
-      const offset = -50;
+      const offset = width > 1100 ? -50 : -200;
       window.scrollTo({
         top: elementTop + offset,
         behavior: 'smooth'

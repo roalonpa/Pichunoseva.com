@@ -24,6 +24,7 @@ h1, h2, p, span {
   color: white;
   margin: 0 0 10px 0;
   text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  text-align: center;
 }
 
 
@@ -90,6 +91,7 @@ h1, h2, p, span {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  gap: 15px;
 }
 
 .choice {
@@ -236,5 +238,102 @@ h1, h2, p, span {
   .issue-tracker-p {
     font-size: 22px;
     margin: 0 0 8px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .container-title {
+    font-size: 30px;
+  }
+
+  /* Python styling */
+  .python-task {
+    font-size: 18px;
+    max-width: 300px;
+  }
+
+  .python-text, .python-text>span {
+    font-size: 15px;
+  }
+
+  /* Issue Tracker styling */
+  
+  .issue-tracker-container {
+    width: 42%;
+  }
+
+  .issue span {
+    font-size: 15px;
+  }
+
+  .issue-title {
+    font-size: 20px;
+  }
+
+  .issue-description {
+    font-size: 15px;
+  }
+
+  .issue-tracker-p {
+    font-size: 20px;
+  }
+
+  .issue-progress {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .container-title {
+    font-size: 25px;
+  }
+
+  /* Choose your adventure styling */
+
+  .message {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .choices {
+    width: 90%;
+  }
+
+  .choice {
+    font-size: 18px;
+  }
+
+  .result {
+    font-size: 30px;
+  }
+
+  /* Python styling */
+  .python-task {
+    font-size: 15px;
+    max-width: 205px;
+  }
+
+  .python-text, .python-text>span {
+    font-size: 12px;
+  }
+
+  /* Issue Tracker styling */
+  
+  .issues-containers-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .issue-tracker-container {
+    width: 90%;
+  }
+
+  .issue-progress {
+    flex-direction: row;
+    align-items: center;
   }
 }

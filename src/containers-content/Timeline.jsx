@@ -11,10 +11,12 @@ import { useRef } from 'react';
 import gsap from 'gsap'; // for animations
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useWindowSize } from 'react-use';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Timeline() {
+  const { width } = useWindowSize();
   const timelineEvents = [
     {
       id: 1,
@@ -78,14 +80,15 @@ export default function Timeline() {
   const timelineItemsRightRef = useRef();
   const endItemRef = useRef();
   const timelineLineRef = useRef();
+  const timelineItemsRef = useRef();
 
   useGSAP(() => {
-    const timelineItemsLeft = timelineItemsLeftRef.current?.children;
-    const timelineItemsRight = timelineItemsRightRef.current?.children;
-    const allItems = timelineItemsLeft && timelineItemsRight ? [...Array.from(timelineItemsLeft), ...Array.from(timelineItemsRight), endItemRef.current] : [];
+    const timelineItemsLeft = width > 520 ? timelineItemsLeftRef.current?.children : null;
+    const timelineItemsRight = width > 520 ? timelineItemsRightRef.current?.children : null;
+    const allItems = timelineItemsLeft && timelineItemsRight ? [...Array.from(timelineItemsLeft), ...Array.from(timelineItemsRight), endItemRef.current] : width <= 520 ? [...Array.from(timelineItemsRef.current?.children || []), endItemRef.current] : [];
 
     // Animate the timeline line growing with scroll
-    if (timelineLineRef.current) {
+    if (width > 520 && timelineLineRef?.current) {
       gsap.fromTo(timelineLineRef.current, 
         {
           scaleY: 0,
@@ -135,31 +138,36 @@ export default function Timeline() {
         );
       });
     }
-  }, { dependencies: [timelineItemsLeftRef, timelineItemsRightRef] }) // Animation for each containers on scroll
+  }, { dependencies: [width, timelineItemsRightRef.current, timelineItemsLeftRef.current, timelineItemsRef.current] }) // Animation for each containers on scroll
 
   function mapEvents(index) {
     return timelineEvents
-      .filter((_, i) => index === 'even' ? i % 2 === 0 : i % 2 !== 0)
+      .filter((_, i) => {
+      if (width > 520) {
+        return index === 'even' ? i % 2 === 0 : i % 2 !== 0;
+      }
+      return true;
+      })
       .map((event, idx) => (
         <div key={event.id}>
-          {index === 'odd' && <div className="spacer" style={{ height: '100px' }}></div>}
-          <div key={event.id} className={`timeline-item timeline-item-${idx + 1}`}>
-            <div className="timeline-icon">
-              {event.icon}
-            </div>
-            <div className="timeline-card">
-              <div className="timeline-date">
-                {event.date}
-              </div>
-              <h3 className="timeline-title">
-                {event.title}
-              </h3>
-              <p className="timeline-description">
-                {event.description}
-              </p>
-            </div>
+          {index === 'odd' && width > 520 && <div className="timeline-spacer"></div>}
+          <div className={`timeline-item timeline-item-${idx + 1}`}>
+          <div className="timeline-icon">
+            {event.icon}
           </div>
-          {index === 'even' && <div className="spacer" style={{ height: '100px' }}></div>}
+          <div className="timeline-card">
+            <div className="timeline-date">
+            {event.date}
+            </div>
+            <h3 className="timeline-title">
+            {event.title}
+            </h3>
+            <p className="timeline-description">
+            {event.description}
+            </p>
+          </div>
+          </div>
+          {index === 'even' && width > 520 && <div className="timeline-spacer"></div>}
         </div>
       ));
   }
@@ -168,13 +176,21 @@ export default function Timeline() {
     <>
         <h1 className='container-title'>Loading… Pichu</h1>
         <div className="timeline-container">
-            <div ref={timelineItemsLeftRef} className='timeline-items-left'>
-                {mapEvents('even')}
-            </div>
-            <div className="timeline-line" ref={timelineLineRef}></div>
-            <div ref={timelineItemsRightRef} className='timeline-items-right'>
-                {mapEvents('odd')}
-            </div>
+            {width > 520 ? (
+              <>
+                <div ref={timelineItemsLeftRef} className='timeline-items-left'>
+                    {mapEvents('even')}
+                </div>
+                <div className="timeline-line" ref={timelineLineRef}></div>
+                <div ref={timelineItemsRightRef} className='timeline-items-right'>
+                    {mapEvents('odd')}
+                </div>
+              </>
+            ) : (
+              <div ref={timelineItemsRef} className='timeline-items'>
+                {mapEvents()}
+              </div>
+            )}
         </div>
         <div className='timeline-end' ref={endItemRef}>
             <div className="timeline-end-content">

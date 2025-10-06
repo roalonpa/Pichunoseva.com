@@ -54,3 +54,18 @@
         box-shadow: rgb(0, 0, 0) 0px 0px 30px;
     }
 }
+
+@media screen and (max-width: 600px) {
+
+    .menu-container {
+        padding: 10px 5% 0 5%;
+    }
+    
+    .menu-container button > * {
+        width: 80%;
+    }
+
+    .menu .menu-item {
+        font-size: 15px;
+    }
+}
