@@ -9,7 +9,7 @@ export default function Warning({ setWarning , confetti}) {
                 alert("Retry failed: RetirementException is non-recoverable.\nHint: Try StayWithUs() instead")
                 break;
             case 'abort':
-                alert("System Notice: By aborting retirement, you risk leaving students in an endless loop of depression.\nProceed with caution.");
+                alert("System Notice: If you retire, you risk leaving students without guidance and in an endless loop of depression.\nProceed with caution.");
                 setWarning(false)
                 break;
             case 'stay':
