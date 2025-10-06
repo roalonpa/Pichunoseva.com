@@ -91,14 +91,14 @@ export default function App() {
           {
             opacity: 0,
             y: 5,
-            scale: 0.95
+            scale: 0.9
           },
           {
             opacity: 1,
             y: 0,
             scale: 1,
             duration: 1,
-            ease: "power4.out"
+            ease: "power4.inOut"
           }
         );
       });

@@ -126,7 +126,7 @@ export default function Timeline() {
           {
             opacity: 0,
             y: 5,
-            scale: 0.95
+            scale: 0.9
           },
           {
             opacity: 1,
