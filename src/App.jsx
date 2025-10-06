@@ -80,8 +80,8 @@ export default function App() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top 80%",
-            end: "bottom 20%",
+            start: "top 90%",
+            end: "bottom 10%",
             toggleActions: "play none none reverse", // on enter, on leave, on enter back, on leave back
             markers: false,
           } // animation on scroll
@@ -90,15 +90,15 @@ export default function App() {
         tl.fromTo(container, 
           {
             opacity: 0,
-            y: 20,
-            scale: 0.9
+            y: 5,
+            scale: 0.95
           },
           {
             opacity: 1,
             y: 0,
             scale: 1,
             duration: 1,
-            ease: "back.out(1.7)"
+            ease: "power4.out"
           }
         );
       });

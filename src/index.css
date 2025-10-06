@@ -147,3 +147,13 @@ section {
     margin-block: 100px;
   }
 }
+
+@media screen and (max-height: 900px) {
+  .titlediv {
+    margin-block: 50px;
+  }
+
+  .spacer {
+    height: 260px;
+  }
+}
