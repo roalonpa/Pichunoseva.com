@@ -98,7 +98,7 @@ export default function App() {
             y: 0,
             scale: 1,
             duration: 1,
-            ease: "power4.inOut"
+            ease: "power4.out"
           }
         );
       });
