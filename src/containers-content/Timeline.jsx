@@ -156,12 +156,12 @@ export default function Timeline() {
             {event.icon}
           </div>
           <div className="timeline-card">
-            <div className="timeline-date">
+            <h3 className="timeline-date">
             {event.date}
-            </div>
-            <h3 className="timeline-title">
-            {event.title}
             </h3>
+            <h2 className="timeline-title">
+            {event.title}
+            </h2>
             <p className="timeline-description">
             {event.description}
             </p>
@@ -195,9 +195,9 @@ export default function Timeline() {
         <div className='timeline-end' ref={endItemRef}>
             <div className="timeline-end-content">
                 <div className="timeline-card">
-                    <div className="timeline-date">End of 2025</div>
-                    <h3 className="timeline-title">The End?</h3>
-                    <p className="timeline-description">I hope not</p>
+                    <h3 className="timeline-date">End of 2025</h3>
+                    <h2 className="timeline-title">The End?</h2>
+                    <p className="timeline-description">I hope not!</p>
                 </div>
             </div>
         </div>

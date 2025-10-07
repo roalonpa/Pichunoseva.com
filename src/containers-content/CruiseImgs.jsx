@@ -88,7 +88,7 @@ export default function CruiseImgs() {
                     className="img-tap-btn" 
                     onClick={handleImageChange}
                     disabled={isLoading}
-                ><span>Tap here</span></button>
+                ><h2>Tap here</h2></button>
             </div>
             <div className='img-points'>
                 {images.map((point, index) => (

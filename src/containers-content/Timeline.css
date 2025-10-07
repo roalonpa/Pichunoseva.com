@@ -50,25 +50,8 @@
   color: white;
 }
 
-.timeline-date {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  margin: 0;
-  text-transform: uppercase;
-}
-
 .timeline-title {
-  font-size: 24px;
-  color: white;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
   margin-block: 10px;
-}
-
-.timeline-description {
-  font-size: 18px;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -93,7 +76,7 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .timeline-container {
     padding: 0;
   }
@@ -162,17 +145,5 @@
   .timeline-icon {
     width: 30px;
     height: 30px;
-  }
-
-  .timeline-date {
-    font-size: 15px;
-  }
-
-  .timeline-title {
-    font-size: 20px;
-  }
-
-  .timeline-description {
-    font-size: 15px;
   }
 }

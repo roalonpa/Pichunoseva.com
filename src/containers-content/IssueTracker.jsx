@@ -102,16 +102,16 @@ export default function IssueTracker() {
             <h1 className="container-title">Issue tracker: tasks and bugs</h1>
             <div className="issues-containers-container">
                 <div className="issue-tracker-container">
-                    <p className="issue-tracker-p">Features:</p>
+                    <h2 className="issue-container-title">Features:</h2>
                     <div className="issues">
 
                         {features.map((feature, index) => {
                             return (
                                 <div className="issue" key={feature.id}>
-                                    <span className="issue-priority">Priority: <span style={{color: feature.priority === 'high' ? 'rgba(244, 205, 205, 1)' : feature.priority === 'Medium' ? 'rgba(243, 230, 197, 1)' : 'rgba(194, 242, 206, 1)'}}>{feature.priority}</span></span>
+                                    <h3 className="issue-priority">Priority: <span style={{color: feature.priority === 'high' ? 'rgba(244, 205, 205, 1)' : feature.priority === 'Medium' ? 'rgba(243, 230, 197, 1)' : 'rgba(194, 242, 206, 1)'}}> {feature.priority}</span></h3>
                                     <h2 className="issue-title">{feature.title}</h2>
                                     <p className="issue-description">{feature.description}</p>
-                                    <span className="issue-status">{feature.progress < 10 ? 'pending' : feature.progress == 100 ? 'compleated' : 'in progress'}</span>
+                                    <h3 className="issue-status">{feature.progress < 10 ? 'pending' : feature.progress == 100 ? 'compleated' : 'in progress'}</h3>
                                     <div className="issue-progress" style={{width: '100%'}}>
                                         <div className="issue-progress-bar" style={{width: '120px', height: '8px', backgroundColor: feature.progress < 10 ? 'rgba(244, 205, 205, 1)' : feature.progress > 90 ? 'rgba(194, 242, 206, 1)' : 'rgba(243, 230, 197, 1)', borderRadius: '4px'}}>
                                             <div style={{height: '100%', width:`${feature.progress}%`, backgroundColor: feature.progress < 10 ? 'rgb(255, 0, 0)' : feature.progress > 90 ? 'rgba(0, 239, 60, 1)' : 'rgba(255, 183, 2, 1)', borderRadius: '4px'}}></div>
@@ -126,16 +126,16 @@ export default function IssueTracker() {
                     </div>
                 </div>
                 <div className="issue-tracker-container">
-                    <p className="issue-tracker-p">Bugs:</p>
+                    <h2 className="issue-container-title">Bugs:</h2>
                     <div className="issues">
 
                         {bugs.map((bug, index) => {
                             return (
                                 <div className="issue" key={bug.id}>
-                                    <span className="issue-priority">Priority: <span style={{color: bug.priority === 'CRITICAL' ? 'rgba(244, 205, 205, 1)' : 'rgba(194, 242, 206, 1)'}}>{bug.priority}</span></span>
+                                    <h3 className="issue-priority">Priority: <span style={{color: bug.priority === 'CRITICAL' ? 'rgba(244, 205, 205, 1)' : 'rgba(194, 242, 206, 1)'}}>{bug.priority}</span></h3>
                                     <h2 className="issue-title">{bug.title}</h2>
                                     <p className="issue-description">{bug.description}</p>
-                                    <span className="issue-progress">{bug.status} <div style={{width: '8px', height: '8px', borderRadius: '4px', backgroundColor: bug.status == 'fixed' ? 'rgba(0, 239, 60, 1)' : 'rgba(255, 0, 0, 1)'}}></div></span>
+                                    <h3 className="issue-progress">{bug.status} <div style={{width: '8px', height: '8px', borderRadius: '4px', backgroundColor: bug.status == 'fixed' ? 'rgba(0, 239, 60, 1)' : 'rgba(255, 0, 0, 1)'}}></div></h3>
                                     <p className="issue-id">id: #23{bug.id}</p>
                                 </div>
                             )

@@ -17,13 +17,50 @@ section {
   align-items: center;
 }
 
+h1, h2, h3, p, span {
+  color: white;
+}
+
+p, button{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+h1, h2, h3{
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  margin: 0 0 10px 0;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  display: flex;
+  gap: 5px;
+  margin: 0;
+}
+
+
 .menu-container button, .choices button {
     background: none;
     border: none;
     color: white;
-    font-family: "Poiret One", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
     margin-bottom: 10px;
     text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
     cursor: pointer;
@@ -39,8 +76,6 @@ section {
 }
 
 .title {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
   font-size: 100px;
   color: white;
   text-align: center;
@@ -48,9 +83,6 @@ section {
 }
 
 .subtitle {
-  font-family: "Poiret One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   color: white;
   text-align: center;
   margin-bottom: 50px;
@@ -102,6 +134,23 @@ section {
 
 @media screen and (max-width: 1100px) {
 
+  p {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+
   .titlediv {
     margin-block: 100px;
   }
@@ -123,7 +172,24 @@ section {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
   .title {
     font-size: 60px;
   }
@@ -139,6 +205,23 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+
+  p {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
   .title {
     font-size: 40px;
   }
@@ -153,7 +236,7 @@ section {
   }
 }
 
-@media screen and (max-height: 900px) and (max-width: 600px) {
+@media screen and (max-height: 900px) and (max-width: 700px) {
   .titlediv {
     margin-block: 50px;
   }

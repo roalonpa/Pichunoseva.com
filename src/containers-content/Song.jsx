@@ -1,6 +1,7 @@
 
 import { useWindowSize } from 'react-use';
 import songCover from '../assets/SongCover.png';
+import song from '../assets/songPichu.mp3';
 
 export default function Song() {
     const { width } = useWindowSize();
@@ -11,9 +12,9 @@ export default function Song() {
             <div className="song-container">
                 <img src={songCover} className='song-cover'/>
                 <div className="song-info">
-                    {width > 480 && <h1 className='song-title'>Don't go, Pichu</h1>}
+                    {width > 480 && <h2 className='song-title'>Don't go, Pichu</h2>}
                     <audio controls className="song-audio">
-                        <source src="public/songPichu.mp3" type="audio/mpeg" />
+                        <source src={song} type="audio/mpeg" />
                         Your browser does not support the audio element.
                     </audio>
                 </div>

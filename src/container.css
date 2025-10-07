@@ -13,21 +13,9 @@
   min-height: 350px;
 }
 
-h1, h2, p, span {
-  color: white;
-}
-
-p {
-  line-height: 1.5;
-}
-
 .container-title {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
   font-size: 40px;
-  color: white;
   margin: 0 0 10px 0;
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
   text-align: center;
 }
 
@@ -35,8 +23,7 @@ p {
 /* Python styling */
 
 .python-text, .python-text>span {
-  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
-  font-weight: lighter;
+  font-family: 'Fira Mono', monospace;
 }
 
 .python-div {
@@ -66,8 +53,6 @@ p {
 }
 
 .python-task {
-  font-size: 20px;
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
   margin-bottom: 20px;
   text-align: center;
   max-width: 600px;
@@ -84,7 +69,6 @@ p {
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
   margin: 0 0 10px 0;
-  font-size: 20px;
   text-align: center;
 }
 
@@ -101,7 +85,6 @@ p {
 .choice {
   width: 50%;
   cursor: pointer;
-  font-size: 20px;
   text-align: center;
 }
 
@@ -112,10 +95,6 @@ p {
 
 .result {
   margin-block: 20px;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-size: 50px;
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 }
 
 /* Spotify playlist styling */
@@ -158,19 +137,7 @@ p {
   gap: 5px;
 }
 
-.issue span {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
 .issue-title {
-  font-size: 24px;
-  color: white;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
   margin: 10px 0 0 0;
   line-height: 1.2;
 }
@@ -179,11 +146,7 @@ p {
   margin: 0 0 10px 0;
 }
 
-.issue-tracker-p {
-  font-size: 24px;
-  color: white;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
+.issue-container-title {
   text-shadow:rgba(0, 0, 0, 0.3) 0px 0px 10px;
   margin: 0 0 10px 0;
 }
@@ -249,23 +212,20 @@ p {
   border: none;
 }
 
-.img-tap-btn>span {
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
-  font-size: 25px;
+.img-tap-btn>h2 {
   color: white;
   text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
   cursor: pointer;
   animation: fadeInOut 2.2s infinite ease-in-out;
 }
 
-.img-tap-btn>span:hover {
+.img-tap-btn>h2:hover {
   animation: none;
   opacity: 0.7;
   transition: all 0.2s ease;
 }
 
-.img-tap-btn:disabled span {
+.img-tap-btn:disabled h2 {
   opacity: 0.5;
   cursor: not-allowed;
   animation: none;
@@ -326,11 +286,7 @@ div.img-points {
 }
 
 .song-title {
-  margin: 30px 10px;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  color: white;
+  margin: 0 0 30px 10px;
 }
 
 .song-audio {
@@ -349,6 +305,7 @@ div.img-points {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
 }
 
 .lyrics {
@@ -365,7 +322,6 @@ div.img-points {
   /* Python styling */
 
   .python-task {
-    font-size: 18px;
     max-width: 500px;
   }
 
@@ -380,18 +336,10 @@ div.img-points {
   .issue-tracker-container {
     padding: 10px;
   }
-
-  .issue span {
-    font-size: 16px;
-  }
-  .issue-title {
-    font-size: 22px;
-  }
   .issue-description {
     margin: 0 0 8px 0;
   }
-  .issue-tracker-p {
-    font-size: 22px;
+  .issue-container-title {
     margin: 0 0 8px 0;
   }
 
@@ -416,7 +364,6 @@ div.img-points {
 
   /* Python styling */
   .python-task {
-    font-size: 18px;
     max-width: 300px;
   }
 
@@ -428,22 +375,6 @@ div.img-points {
   
   .issue-tracker-container {
     width: 42%;
-  }
-
-  .issue span {
-    font-size: 15px;
-  }
-
-  .issue-title {
-    font-size: 20px;
-  }
-
-  .issue-description {
-    font-size: 15px;
-  }
-
-  .issue-tracker-p {
-    font-size: 20px;
   }
 
   .issue-progress {
@@ -464,10 +395,6 @@ div.img-points {
     align-items: center;
   }
 
-  .song-title {
-    font-size: 22px;
-  }
-
   .song-audio {
     height: 30px;
   }
@@ -484,15 +411,10 @@ div.img-points {
 
   .message {
     padding: 10px;
-    font-size: 15px;
   }
 
   .choices {
     width: 90%;
-  }
-
-  .choice {
-    font-size: 18px;
   }
 
   .result {
@@ -501,7 +423,6 @@ div.img-points {
 
   /* Python styling */
   .python-task {
-    font-size: 15px;
     max-width: 205px;
   }
 
