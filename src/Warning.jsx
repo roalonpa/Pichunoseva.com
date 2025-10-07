@@ -1,5 +1,6 @@
 import './warning.css'
 import { BiSolidError } from "react-icons/bi";
+import song from './assets/songPichu.mp3';
 
 export default function Warning({ setWarning , confetti}) {
 
@@ -16,6 +17,8 @@ export default function Warning({ setWarning , confetti}) {
                 alert("Bug resolved: RetirementException handled successfully.");
                 setWarning(false)
                 confetti()
+                const audio = new Audio(song);
+                audio.play();
                 break;
             default:
                 break;
