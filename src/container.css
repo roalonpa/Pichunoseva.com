@@ -263,6 +263,17 @@ h1, h2, p, span {
   transition: all 0.2s ease;
 }
 
+.img-tap-btn:disabled span {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+}
+
+.img-point-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 div.img-points {
   width: 200px;
   display: flex;

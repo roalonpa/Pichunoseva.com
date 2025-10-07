@@ -46,6 +46,7 @@ export default function CruiseImgs() {
     ];
     const [imgState, setImgState] = useState(() => {return images[0]});
     const [fadeState, setFadeState] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const imgPointStyle = {
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
     };
@@ -55,20 +56,39 @@ export default function CruiseImgs() {
         transition: 'background-color 0.5s ease-in-out',
     };
 
-    function handleImageChange(id) {
+    function handleImageChange() {
+        if (isLoading) return; // Prevent multiple clicks during transition
+        
+        setIsLoading(true);
         setFadeState(true);
+        
         setTimeout(() => {
-            setImgState(id === images.length - 1 ? images[0] : images[id + 1]);
-            setFadeState(false);
-        }, 200);
+            const currentId = imgState.id;
+            const nextId = currentId === images.length - 1 ? 0 : currentId + 1;
+            setImgState(images[nextId]);
+        }, 150);
+    }
+
+    function handleImageLoad() {
+        setFadeState(false);
+        setIsLoading(false);
     }
 
     return (
         <>
             <h1 className='container-title'>Our Cruise Trip</h1>
             <div className="cruise-img-container">
-                <img src={imgState.src} className={`cruise-img ${fadeState === true && 'cruise-img-fade'}`} />
-                <button className="img-tap-btn" onClick={() => handleImageChange(imgState.id)}><span>Tap here</span></button>
+                <img 
+                    src={imgState.src} 
+                    className={`cruise-img ${fadeState === true && 'cruise-img-fade'}`}
+                    onLoad={handleImageLoad}
+                    onError={handleImageLoad} // Fallback in case of error
+                />
+                <button 
+                    className="img-tap-btn" 
+                    onClick={handleImageChange}
+                    disabled={isLoading}
+                ><span>Tap here</span></button>
             </div>
             <div className='img-points'>
                 {images.map((point, index) => (
@@ -77,12 +97,15 @@ export default function CruiseImgs() {
                         className='img-point-btn' 
                         style={imgState.id === point.id ? activeImgPointStyle : imgPointStyle} 
                         onClick={() => {
-                            setFadeState(true);
-                            setTimeout(() => {
-                                setImgState(point);
-                                setFadeState(false);
-                            }, 150);
+                            if (imgState.id !== point.id && !isLoading) {
+                                setIsLoading(true);
+                                setFadeState(true);
+                                setTimeout(() => {
+                                    setImgState(point);
+                                }, 150);
+                            }
                         }}
+                        disabled={isLoading}
                     ></button>
                 ))}
             </div>
