@@ -1,6 +1,6 @@
 
 import { useWindowSize } from 'react-use';
-import songCover from '../assets/songCover.png';
+import songCover from '../assets/SongCover.png';
 
 export default function Song() {
     const { width } = useWindowSize();
