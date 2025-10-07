@@ -13,7 +13,7 @@ import Python from './containers-content/Python'
 import Timeline from './containers-content/Timeline';
 import Spans from './Spans'
 import Title from './Title'
-import Carousel from './containers-content/Carousel';
+import CruiseImgs from './containers-content/CruiseImgs';
 import IssueTracker from './containers-content/IssueTracker';
 import Menu from './Menu';
 import Warning from './Warning';
@@ -55,8 +55,8 @@ export default function App() {
     },
     {
       id: 4,
-      name: 'Carousel',
-      component: <Carousel />,
+      name: 'Cruise Photos',
+      component: <CruiseImgs />,
     },
     {
       id: 5,
