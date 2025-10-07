@@ -9,7 +9,7 @@ export default function Menu({ scrollTo, containersData }) {
 
     return (
         <div className="menu-container">
-            <button className="menu-button" onClick={() => {setMenuState(menuState === 'open' ? 'closed' : 'open'); menuState === 'closed' ? window.scrollTo({top: 0, behavior: 'smooth'}) : null}}>
+            <button className="menu-button openclose" onClick={() => {setMenuState(menuState === 'open' ? 'closed' : 'open'); menuState === 'closed' ? window.scrollTo({top: 0, behavior: 'smooth'}) : null}}>
                 {menuState === 'open' ? (
                     <IoClose size={35} />
                 ) : (

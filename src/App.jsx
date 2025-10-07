@@ -15,6 +15,7 @@ import Spans from './Spans'
 import Title from './Title'
 import CruiseImgs from './containers-content/CruiseImgs';
 import IssueTracker from './containers-content/IssueTracker';
+import Song from './containers-content/Song';
 import Menu from './Menu';
 import Warning from './Warning';
 import EligeTuAventura from './containers-content/EligeTuAventura';
@@ -62,6 +63,11 @@ export default function App() {
       id: 5,
       name: 'Python',
       component: <Python />,
+    },
+    {
+      id: 6,
+      name: 'Song',
+      component: <Song />,
     },
   ] // Data and content for each container
 

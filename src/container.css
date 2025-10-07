@@ -17,6 +17,10 @@ h1, h2, p, span {
   color: white;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .container-title {
   font-family: "Anton", sans-serif;
   font-weight: 400;
@@ -122,8 +126,6 @@ h1, h2, p, span {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
 }
-
-/* Carousel styling */
 
 
 /* Issue Tracker styling */
@@ -292,6 +294,67 @@ div.img-points {
   cursor: pointer;
 }
 
+/* Song styling */
+
+.song-container {
+  width: 70%;
+  background-color: rgb(25, 25, 25);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.song-cover {
+  width: 40%;
+  max-width: 200px;
+  border-radius: 5px;
+}
+
+.song-info {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.song-title {
+  margin: 30px 10px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: white;
+}
+
+.song-audio {
+  width: 100%;
+  height: 40px;
+}
+
+.lyrics-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.lyrics {
+  width: fit-content;
+}
+
 
 @media screen and (max-width: 1100px) {
   .container {
@@ -337,9 +400,15 @@ div.img-points {
   .cruise-img-container {
     width: 60%;
   }
+
+  /* Song styling */
+  .song-container, .lyrics-container {
+    width: 90%;
+  }
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
   .container-title {
     font-size: 30px;
@@ -387,6 +456,22 @@ div.img-points {
   .cruise-img-container {
     width: 80%;
   }
+
+  /* Song styling */
+  .lyrics-container {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .song-title {
+    font-size: 22px;
+  }
+
+  .song-audio {
+    height: 30px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -439,5 +524,33 @@ div.img-points {
   .issue-progress {
     flex-direction: row;
     align-items: center;
+  }
+
+  /* Song styling */
+
+  .song-container {
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .song-cover {
+    width: 90%;
+    max-width:none;
+  }
+
+  .song-info {
+    width: 90%;
+  }
+
+  .lyrics-container {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .lyrics {
+    width: 90%;
   }
 }
