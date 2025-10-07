@@ -6,14 +6,12 @@ export default function Footer() {
                 <div>
                     <p className='footer-title'>Credits:</p>
                     <p>Website development and design by Rocío Alonso Pano</p>
-                    <p>Photoshop by Delfina Brugna</p>
+                    <p>Photoshop by Delfina Brugna and Rocio Alonso Pano</p>
                 </div>
                 <div>
                     <p className='footer-title'>Contact us:</p>
                     <p>Email: r.alonsopano@dover.edu.ar</p>
-                    <p>Email: d.brugna@dover.edu.ar</p>
                     <p>Phone: +54 9 11 5389 1942</p>
-                    <p>Phone: +54 9 11 5052 3039</p>
 
                 </div>
             </section>
