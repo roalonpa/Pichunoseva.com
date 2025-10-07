@@ -45,8 +45,8 @@ export default function App() {
     },
     {
       id: 2,
-      name: 'Python',
-      component: <Python />,
+      name: 'Issue Tracker',
+      component: <IssueTracker />,
     },
     {
       id: 3,
@@ -60,9 +60,9 @@ export default function App() {
     },
     {
       id: 5,
-      name: 'Issue Tracker',
-      component: <IssueTracker />,
-    }
+      name: 'Python',
+      component: <Python />,
+    },
   ] // Data and content for each container
 
   useEffect(() => {
