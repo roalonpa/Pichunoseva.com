@@ -3,6 +3,7 @@ import { FaPython } from 'react-icons/fa'
 export default function Python() {
     return (
         <>
+            <h1 className="container-title">Pichu's retirement impact in her language</h1>
             <div className="python-div">
                 <div className='python-header'>
                     <FaPython size={55} className='python-icon'/>
