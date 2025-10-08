@@ -81,11 +81,32 @@ export default function Timeline() {
   const endItemRef = useRef();
   const timelineLineRef = useRef();
   const timelineItemsRef = useRef();
+  const timelineContainerRef = useRef();
 
   useGSAP(() => {
     const timelineItemsLeft = width > 520 ? timelineItemsLeftRef.current?.children : null;
     const timelineItemsRight = width > 520 ? timelineItemsRightRef.current?.children : null;
-    const allItems = timelineItemsLeft && timelineItemsRight ? [...Array.from(timelineItemsLeft), ...Array.from(timelineItemsRight), endItemRef.current] : width <= 520 ? [...Array.from(timelineItemsRef.current?.children || []), endItemRef.current] : [];
+    let allItems = [];
+    if (timelineItemsLeft && timelineItemsRight) {
+      // Filtrar solo los elementos que contienen .timeline-item (no spacers)
+      const leftArray = Array.from(timelineItemsLeft).filter(item => 
+        item.querySelector && item.querySelector('.timeline-item')
+      ).map(item => item.querySelector('.timeline-item'));
+      
+      const rightArray = Array.from(timelineItemsRight).filter(item => 
+        item.querySelector && item.querySelector('.timeline-item')
+      ).map(item => item.querySelector('.timeline-item'));
+      
+      const maxLength = Math.max(leftArray.length, rightArray.length);
+      
+      for (let i = 0; i < maxLength; i++) {
+        if (leftArray[i]) allItems.push(leftArray[i]);
+        if (rightArray[i]) allItems.push(rightArray[i]);
+      }
+      allItems.push(endItemRef.current);
+    } else if (width <= 520) {
+      allItems = [...Array.from(timelineItemsRef.current?.children || []), endItemRef.current];
+    }
 
     // Animate the timeline line growing with scroll
     if (width > 520 && timelineLineRef?.current) {
@@ -98,7 +119,7 @@ export default function Timeline() {
           scaleY: 1,
           ease: "none",
           scrollTrigger: {
-            trigger: timelineItemsRightRef.current,
+            trigger: timelineContainerRef.current,
             start: "top 80%",
             end: "bottom 60%",
             scrub: true, // Makes it follow the scroll smoothly
@@ -152,20 +173,20 @@ export default function Timeline() {
         <div key={event.id}>
           {index === 'odd' && width > 520 && <div className="timeline-spacer"></div>}
           <div className={`timeline-item timeline-item-${idx + 1}`}>
-          <div className="timeline-icon">
-            {event.icon}
-          </div>
-          <div className="timeline-card">
-            <h3 className="timeline-date">
-            {event.date}
-            </h3>
-            <h2 className="timeline-title">
-            {event.title}
-            </h2>
-            <p className="timeline-description">
-            {event.description}
-            </p>
-          </div>
+            <div className="timeline-icon">
+              {event.icon}
+            </div>
+            <div className="timeline-card">
+              <h3 className="timeline-date">
+              {event.date}
+              </h3>
+              <h2 className="timeline-title">
+              {event.title}
+              </h2>
+              <p className="timeline-description">
+              {event.description}
+              </p>
+            </div>
           </div>
           {index === 'even' && width > 520 && <div className="timeline-spacer"></div>}
         </div>
@@ -175,7 +196,7 @@ export default function Timeline() {
   return (
     <>
         <h1 className='container-title'>Loading… Pichu</h1>
-        <div className="timeline-container">
+        <div className="timeline-container" ref={timelineContainerRef}>
             {width > 520 ? (
               <>
                 <div ref={timelineItemsLeftRef} className='timeline-items-left'>
@@ -197,7 +218,7 @@ export default function Timeline() {
                 <div className="timeline-card">
                     <h3 className="timeline-date">End of 2025</h3>
                     <h2 className="timeline-title">The End?</h2>
-                    <p className="timeline-description">I hope not!</p>
+                    <p className="timeline-description">I hope not</p>
                 </div>
             </div>
         </div>
