@@ -16,6 +16,7 @@ import Title from './Title'
 import CruiseImgs from './containers-content/CruiseImgs';
 import IssueTracker from './containers-content/IssueTracker';
 import Song from './containers-content/Song';
+import Story from './containers-content/Story';
 import Menu from './Menu';
 import Warning from './Warning';
 import EligeTuAventura from './containers-content/EligeTuAventura';
@@ -37,7 +38,7 @@ export default function App() {
     {
       id: 0,
       name: 'Choose your own adventure',
-      component: <EligeTuAventura />,
+      component: <EligeTuAventura scrollToPhotos={() => scrollTo(4)}/>,
     },
     {
       id: 1,
@@ -57,7 +58,7 @@ export default function App() {
     {
       id: 4,
       name: 'Cruise Photos',
-      component: <CruiseImgs />,
+      component: <CruiseImgs returnToTop={() => scrollTo(0)} />,
     },
     {
       id: 5,
@@ -66,6 +67,11 @@ export default function App() {
     },
     {
       id: 6,
+      name: 'Story',
+      component: <Story />,
+    },
+    {
+      id: 7,
       name: 'Song',
       component: <Song />,
     },
@@ -148,7 +154,7 @@ export default function App() {
         <div className="spacer"></div>
         <section ref={containers} className="containers">
           {containersData.map((data) => (
-            <Container key={data.id} id={data.id} FlexDirection={data.flexDirection}>
+            <Container key={data.id} id={data.id} FlexDirection={data.flexDirection} >
               {data.component}
             </Container>
           ))}

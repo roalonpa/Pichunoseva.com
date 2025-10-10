@@ -8,7 +8,7 @@ import cruiseImg7 from '../assets/CruiseImg7.png';
 import cruiseImg8 from '../assets/CruiseImg8.png';
 import { useState } from 'react';
 
-export default function CruiseImgs() {
+export default function CruiseImgs({ returnToTop }) {
 
     const images = [
         {
@@ -109,6 +109,7 @@ export default function CruiseImgs() {
                     ></button>
                 ))}
             </div>
+            <button className='go-to-top' onClick={returnToTop}>Return to top</button>
         </>
     );
 }

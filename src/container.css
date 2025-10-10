@@ -97,6 +97,20 @@
   margin-block: 20px;
 }
 
+.go-to-cruise-photos {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+  cursor: pointer;
+}
+
+.go-to-cruise-photos:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
 /* Spotify playlist styling */
 
 .playlist-iframe {
@@ -191,6 +205,62 @@
 
 .cruise-img-fade {
   opacity: 0;
+}
+
+.img-points {
+  margin-bottom: 20px;
+}
+
+.go-to-top {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  cursor: pointer;
+}
+
+.go-to-top:hover {
+  text-shadow: rgba(0, 0, 0, 1) 0px 0px 20px;
+  transition: all 0.2s ease;
+}
+
+/* Story styling */
+
+.all-chapters-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.chapter-container {
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+}
+
+.chapter-toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 }
 
 @keyframes fadeInOut {
@@ -473,5 +543,17 @@ div.img-points {
 
   .lyrics {
     width: 90%;
+  }
+
+  /* Story styling */
+
+  .all-chapters-container {
+    width: 80%;
+  }
+
+  .chapter-toggle-button {
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
   }
 }

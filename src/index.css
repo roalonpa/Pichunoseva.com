@@ -17,11 +17,11 @@ section {
   align-items: center;
 }
 
-h1, h2, h3, p, span {
+h1, h2, h3, p, span, button {
   color: white;
 }
 
-p, button{
+p, button {
   font-family: "Quicksand", sans-serif;
   font-weight: 200;
   line-height: 1.5;

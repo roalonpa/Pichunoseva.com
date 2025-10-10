@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function EligeTuAventura() {
+export default function EligeTuAventura({ scrollToPhotos }) {
 
     const [messageState, setMessageState] = useState(() => {return 'Are you ready to begin the journey?'});
     const [choicesState, setChoicesState] = useState(() => {return ['Yes']});
@@ -95,6 +95,7 @@ export default function EligeTuAventura() {
             <h1 className="container-title">Choose Your Own Adventure</h1>
             <p className='message'>{messageState}</p>
             {resultState && <h1 className='result'>{resultState}</h1>}
+            {resultState && resultState === 'You Won!' && <button className='go-to-cruise-photos' onClick={scrollToPhotos}>Click here to see the photos of our trip</button>}
             <div className='choices'>
             {choicesState.map((choice, index) => {
                 return <button key={index} onClick={() => handleChoice(choice)} className='choice'>{choice}</button>
