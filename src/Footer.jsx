@@ -7,6 +7,8 @@ export default function Footer() {
                     <h3>Credits:</h3>
                     <p>Website development and design by Rocío Alonso Pano</p>
                     <p>Photoshop by Delfina Brugna and Rocio Alonso Pano</p>
+                    <p>Blackout story by Camila Luzuriga</p>
+                    <p>Playlist idea by Felicitas Rodriguez</p>
                 </div>
                 <div>
                     <h3>Contact us:</h3>
