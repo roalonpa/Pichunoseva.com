@@ -41,9 +41,9 @@
 
 ## 👥 Who made this
 
-**The website:** Rochi 
-**Photos:** Delfi and Rochi 
-**The story:** Cami 
-**Playlist idea:** Feli
+- **The website:** Rochi 
+- **Photos:** Delfi and Rochi 
+- **The story:** Cami 
+- **Playlist idea:** Feli
 
 Signed by Rochi
